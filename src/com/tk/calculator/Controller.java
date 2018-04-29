@@ -3,6 +3,7 @@ package com.tk.calculator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 
 public class Controller {
@@ -27,7 +28,9 @@ public class Controller {
     @FXML
     private void processOperator(ActionEvent actionEvent) {
         String value = ((Button)actionEvent.getSource()).getText();
-
+        performOperation(value);
+    }
+    private void performOperation(String value){
         if (!"=".equals(value)){
             if (!operator.isEmpty())
                 return;
@@ -76,6 +79,29 @@ public class Controller {
         }
         else {
             output.setText("-".concat(value));
+        }
+    }
+    @FXML
+    private void processKeyTyped(KeyEvent keyEvent) {
+        String typedKey = keyEvent.getCharacter();
+        if (typedKey.matches("[0-9]")){
+            output.setText(output.getText().concat(typedKey));
+        }
+        else {
+            switch (typedKey) {
+                case "*":
+                    performOperation("X");
+                    break;
+                case "/":
+                    performOperation(typedKey);
+                    break;
+                case "-":
+                    performOperation(typedKey);
+                    break;
+                case "+":
+                    performOperation(typedKey);
+                    break;
+            }
         }
     }
 }
