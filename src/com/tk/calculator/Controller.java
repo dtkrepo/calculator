@@ -3,6 +3,7 @@ package com.tk.calculator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 
@@ -99,6 +100,9 @@ public class Controller {
                     performOperation(typedKey);
                     break;
                 case "+":
+                    performOperation(typedKey);
+                    break;
+                case "=":
                     performOperation(typedKey);
                     break;
             }
