@@ -15,7 +15,7 @@
         <Rectangle fill="TRANSPARENT" height="50" stroke="GRAY" width="230" />
         <Text fx:id="output" />
     </StackPane>
-   <GridPane alignment="CENTER" hgap="1.0" vgap="10.0" onKeyTyped="#processKeyTyped">
+   <GridPane alignment="CENTER" hgap="1.0" vgap="10.0" onKeyTyped="#processKeyTyped" >
        <columnConstraints>
            <ColumnConstraints halignment="CENTER" percentWidth="22" />
            <ColumnConstraints halignment="CENTER" percentWidth="22" />

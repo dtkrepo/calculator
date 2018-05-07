@@ -3,7 +3,6 @@ package com.tk.calculator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 
@@ -14,7 +13,6 @@ public class Controller {
     private long number1 = 0;
     private String operator = "";
     private boolean start = true;
-
     private Model model = new Model();
 
     @FXML
@@ -89,23 +87,7 @@ public class Controller {
             output.setText(output.getText().concat(typedKey));
         }
         else {
-            switch (typedKey) {
-                case "*":
-                    performOperation("X");
-                    break;
-                case "/":
-                    performOperation(typedKey);
-                    break;
-                case "-":
-                    performOperation(typedKey);
-                    break;
-                case "+":
-                    performOperation(typedKey);
-                    break;
-                case "=":
-                    performOperation(typedKey);
-                    break;
-            }
+            performOperation(typedKey);
         }
     }
 }
